@@ -12,3 +12,18 @@ To get the Google server key, head to the [Google Cloud Platform website](https:
 Then, log in to the [Spotify Developer Console](https://developer.spotify.com/dashboard), and create a new app. Once created, you should get Client ID and Client Secret keys, which are the other two values for your `.env` file.
 
 Then, just run the server with `npm start`.
+
+
+If you are using auto deployments here are the following commands:
+
+Build Command:
+(We are unknown of the build command)
+Start Command: 
+`npm start `
+Install Command:
+`npm install`
+Output directory:
+(Don't put anything)
+
+
+Make an [issue](https://github.com/alexwohlbruck/jukebox/issues) if you have problems with anything.
