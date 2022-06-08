@@ -17,12 +17,19 @@ Then, just run the server with `npm start`.
 If you are using auto deployments here are the following commands:
 
 Build Command:
+
 (We are unknown of the build command)
+
 Start Command: 
+
 `npm start `
+
 Install Command:
+
 `npm install`
+
 Output directory:
+
 (Don't put anything)
 
 
