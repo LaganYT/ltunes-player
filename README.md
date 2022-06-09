@@ -1,6 +1,12 @@
 # Jukebox: Redux
 
-To get the project running, you will just need to install the required packages with npm or yarn, and create a .env file with the following fields:
+#Setup process:
+
+Step 1: Go to [heroku](https://dashboard.heroku.com/apps) and create a new app.
+
+Step 2: Link your github fork of this project to the app (In the setup page or deployment menu) - Use `beta` branch for auto updates
+
+Step 3: Go to the settings and fill out the following enviromental variables/config vars
 
 ```
 SPOTIFY_CLIENT_ID = xxxxxxxxxxxxxxxxxxxxx
@@ -11,26 +17,8 @@ To get the Google server key, head to the [Google Cloud Platform website](https:
 
 Then, log in to the [Spotify Developer Console](https://developer.spotify.com/dashboard), and create a new app. Once created, you should get Client ID and Client Secret keys, which are the other two values for your `.env` file.
 
-Then, just run the server with `npm start`.
+Step 4: Go back to the settings and install the nodejs buildpack.
 
-
-If you are using auto deployments here are the following commands:
-
-Build Command:
-
-(We are unknown of the build command)
-
-Start Command: 
-
-`npm start `
-
-Install Command:
-
-`npm install`
-
-Output directory:
-
-(Don't put anything)
-
+Step 5: Deploy the webapp.
 
 Make an [issue](https://github.com/alexwohlbruck/jukebox/issues) if you have problems with anything.
