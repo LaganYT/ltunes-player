@@ -2,7 +2,7 @@
 
 Step 1: Go to [heroku](https://dashboard.heroku.com/apps) and create a new app.
 
-Step 2: Link your github fork of this project to the app (In the setup page or deployment menu) - Use `beta` branch for auto updates
+Step 2: Link your github fork of this project to the app (In the setup page or deployment menu) - Use `main` branch for auto updates
 
 Step 3: Go to the settings and fill out the following enviromental variables/config vars
 
