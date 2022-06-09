@@ -7,6 +7,10 @@
     "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+   "engines" : { 
+    "npm" : ">=7.0.0",
+    "node" : ">=16.0.0"
+  },
   "author": "Alex Wohlbruck (alexwohlbruck@gmail.com)",
   "license": "ISC",
   "dependencies": {
