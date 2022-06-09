@@ -1,6 +1,4 @@
-# Jukebox: Redux
-
-#Setup process:
+# Setup process:
 
 Step 1: Go to [heroku](https://dashboard.heroku.com/apps) and create a new app.
 
@@ -22,3 +20,6 @@ Step 4: Go back to the settings and install the nodejs buildpack.
 Step 5: Deploy the webapp.
 
 Make an [issue](https://github.com/alexwohlbruck/jukebox/issues) if you have problems with anything.
+
+
+This is a README.md file made by LaganYT for the self hosting of the Jukebox Redux project.
