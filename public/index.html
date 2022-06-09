@@ -1,7 +1,7 @@
 <html lang="en" ng-app="jukebox" ng-controller="MainCtrl">
 	<head>
-		<title ng-bind="queue.nowPlaying.streamUrl ? (queue.tracks[queue.nowPlaying.index].name + ' - ' + queue.tracks[queue.nowPlaying.index].artists[0].name) : 'Jukebox Redux'">
-			Jukebox Redux
+		<title ng-bind="queue.nowPlaying.streamUrl ? (queue.tracks[queue.nowPlaying.index].name + ' - ' + queue.tracks[queue.nowPlaying.index].artists[0].name) : 'LTunes Player'">
+			LTunes Player
 		</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" type="text/css" href="css/style.css"/>
@@ -21,9 +21,9 @@
 
 			<md-toolbar class="md-hue-2" md-whiteframe="2dp">
 				<div class="md-toolbar-tools" layout="row" layout-align="space-between center">
-					<h2 flex="10" md-truncate>Jukebox</h2>
+					<a href="https://ltunes.gq/"><h2 flex="10" md-truncate><img src="https://ltunes.gq/assets/Logo.png" width="50" height="50">LTunes Player</h2></a>
 					
-					<p>Latency: {{Player.latency}}</p>
+					<p>Latency (Ping/Delay): {{Player.latency}}ms</p>
 					
 					<div layout="row" layout-align="center center">
 						<form ng-submit="$state.go('search', {q: searchQuery})" style="margin: 0;">
