@@ -1,11 +1,11 @@
-/* module.exports = function(io) {
+module.exports = function(io) {
     var Player = {
         queue: {
             source: {
                 id: null,
                 type: null,
                 tracks: [],
-                /* other spotify data 
+               // other spotify data
             },
             nowPlaying: {
                 index: 0,
@@ -62,7 +62,7 @@
     
     io.on('connection', client => {
         
-        var clientsThatCanPlay = 0, canPlayTimeout;
+        var clientsThatCanPlay = 1, canPlayTimeout;
         
 		client.on('connection:ping', () => client.emit('connection:pong'));
         
@@ -111,4 +111,4 @@
         
         client.on('track:ended', () => client.broadcast.emit('track:ended'));
     });
-}; */
+}; 
