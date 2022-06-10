@@ -60,7 +60,7 @@ module.exports = function(io) {
         // canPlay
     };
     
-   /* io.on('connection', client => {
+ /*   io.on('connection', client => {
     
          var clientsThatCanPlay = 1, canPlayTimeout;
         
@@ -91,14 +91,14 @@ module.exports = function(io) {
                     client.emit('playback:play', data);
                 }
             });
-        });
+        });*/
         
         client.on('queue:update', newQueue => {
             Player.updateQueue(newQueue);
-            io.emit('queue:update', Player.queue);
+           // io.emit('queue:update', Player.queue);
         });
         
-        client.on('queue:set', source => {
+       /* client.on('queue:set', source => {
             Player.setQueue(source);
         });
         
