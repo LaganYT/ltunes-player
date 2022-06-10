@@ -5,7 +5,6 @@ module.exports = function(io) {
                 id: null,
                 type: null,
                 tracks: [],
-               // other spotify data
             },
             nowPlaying: {
                 index: 0,
@@ -55,9 +54,8 @@ module.exports = function(io) {
         
         seek(to) {
             
-        },
+        },  
         
-        // canPlay
     };
 };
     
