@@ -59,6 +59,7 @@ module.exports = function(io) {
         
         // canPlay
     };
+}
     
  /*   io.on('connection', client => {
     
