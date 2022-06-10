@@ -59,8 +59,8 @@ module.exports = function(io) {
     };
 };
     
- /*   io.on('connection', client => {
-    
+    io.on('connection', client => {
+    /*
          var clientsThatCanPlay = 1, canPlayTimeout;
         
 		client.on('connection:ping', () => client.emit('connection:pong'));
@@ -108,7 +108,7 @@ module.exports = function(io) {
         
         client.on('track:play.index', data => client.broadcast.emit('track:play.index', data));
         
-        client.on('track:ended', () => client.broadcast.emit('track:ended'));
-    }); */
+        client.on('track:ended', () => client.broadcast.emit('track:ended'));*/
+    }); 
 //}; 
 
