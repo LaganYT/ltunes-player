@@ -1,3 +1,3 @@
-/* module.exports = function(io) {
+ module.exports = function(io) {
     require('./player.socket')(io);
-}; */
+}; 
