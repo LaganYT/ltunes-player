@@ -110,6 +110,6 @@ module.exports = function(io) {
         client.on('track:play.index', data => client.broadcast.emit('track:play.index', data));
         
         client.on('track:ended', () => client.broadcast.emit('track:ended'));
-    }); 
+    }); */
 }; 
-/*
+
