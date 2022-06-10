@@ -60,7 +60,7 @@ module.exports = function(io) {
         // canPlay
     };
     
-    io.on('connection', client => {
+   /* io.on('connection', client => {
     
          var clientsThatCanPlay = 1, canPlayTimeout;
         
@@ -72,13 +72,13 @@ module.exports = function(io) {
                 
                 var totalClients = clients.length;
                 
-                
+                                if (clientsThatCanPlay == 0) {
                     canPlayTimeout = setTimeout(function() {
                         // TODO: Boot slow loading devices
                         console.log((totalClients - clientsThatCanPlay) + ' are taking too long, playing now');
                         client.emit('playback:play');
-                    }, 30000000000000000000000);
-                
+                    }, 3000);
+				},
                 
                 clientsThatCanPlay++;
             
@@ -112,3 +112,4 @@ module.exports = function(io) {
         client.on('track:ended', () => client.broadcast.emit('track:ended'));
     }); 
 }; 
+/*
