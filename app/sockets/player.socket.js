@@ -1,11 +1,11 @@
-module.exports = function(io) {
+/* module.exports = function(io) {
     var Player = {
         queue: {
             source: {
                 id: null,
                 type: null,
                 tracks: [],
-                /* other spotify data */
+                /* other spotify data 
             },
             nowPlaying: {
                 index: 0,
@@ -67,7 +67,7 @@ module.exports = function(io) {
 		client.on('connection:ping', () => client.emit('connection:pong'));
         
         // TODO: Inefficient and verbose -- needs refactoring
-       /* client.on('playback:canplay', data => {
+        client.on('playback:canplay', data => {
             io.clients((error, clients) => {
                 
                 var totalClients = clients.length;
@@ -78,7 +78,7 @@ module.exports = function(io) {
                         console.log((totalClients - clientsThatCanPlay) + ' are taking too long, playing now');
                         client.emit('playback:play');
                     }, 3000);
-                } */
+                }
                 
                 clientsThatCanPlay++;
             
@@ -111,4 +111,4 @@ module.exports = function(io) {
         
         client.on('track:ended', () => client.broadcast.emit('track:ended'));
     });
-};
+}; */
