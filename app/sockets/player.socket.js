@@ -60,38 +60,6 @@ module.exports = function(io) {
         // canPlay
     };
     
-    io.on('connection', client => {
-        
-        var clientsThatCanPlay = 0, canPlayTimeout;
-        
-		client.on('connection:ping', () => client.emit('connection:pong'));
-        
-        // TODO: Inefficient and verbose -- needs refactoring
-        client.on('playback:canplay', data => {
-            io.clients((error, clients) => {
-                
-                var totalClients = clients.length;
-                
-                if (clientsThatCanPlay == 0) {
-                    canPlayTimeout = setTimeout(function() {
-                        // TODO: Boot slow loading devices
-                        console.log((totalClients - clientsThatCanPlay) + ' are taking too long, playing now');
-                        client.emit('playback:play');
-                    }, 3000);
-                }
-                
-                clientsThatCanPlay++;
-            
-                console.log(clientsThatCanPlay + '/' + totalClients + ' can play');
-                
-                if (clientsThatCanPlay >= totalClients) {
-                    clientsThatCanPlay = 0;
-                    clearTimeout(canPlayTimeout);
-                    
-                    client.emit('playback:play', data);
-                }
-            });
-        });
         
         client.on('queue:update', newQueue => {
             Player.updateQueue(newQueue);
