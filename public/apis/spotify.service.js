@@ -2,12 +2,12 @@
 var app = angular.module('jukebox');
 
 app.service('Spotify', ['$http', function($http) {
-    this.getTrack = function() {
-        // TODO
+    this.getTrack = function(trackId) {
+        return $http.get('/api/track/' + trackId)
     };
     
-    this.getTracks = function() {
-        // TODO
+    this.getTracks = function(userId) {
+        return $http.get('/api/tracks/' + userId)
     };
     
     this.getAlbum = function(albumId) {
