@@ -17,7 +17,7 @@ module.exports = function(io) {
         
         setQueue(source) {
             this.queue.source = source;
-            io.emit('queue:set', source);
+           // (_) io.emit('queue:set', source);
         },
         
         updateQueue(newQueue)  {
@@ -25,7 +25,7 @@ module.exports = function(io) {
         },
         
         plause() {
-            io.emit(this.queue.nowPlaying ? 'playback:play' : 'playback:pause');
+           // io.emit(this.queue.nowPlaying ? 'playback:play' : 'playback:pause');
             this.queue.nowPlaying = !this.queue.nowPlaying;
         },
         
@@ -34,10 +34,10 @@ module.exports = function(io) {
             
             if (direction == 'next' && this.queue.nowPlaying.index < this.queue.source.tracks.items.length - 1) {
                 this.queue.nowPlaying.index++;
-                io.emit('playback:skip.next');
+             //   io.emit('playback:skip.next');
             } else if (direction == 'prev' && this.queue.nowPlaying.index > 0) {
                 this.queue.nowPlaying.index--;
-                io.emit('playback:skip.prev');
+              //  io.emit('playback:skip.prev');
             }
         },
         
@@ -60,7 +60,7 @@ module.exports = function(io) {
         // canPlay
     };
     
-    io.on('connection', client => {
+  //  io.on('connection', client => {
         
         var clientsThatCanPlay = 1, canPlayTimeout;
         
@@ -68,7 +68,7 @@ module.exports = function(io) {
         
         // TODO: Inefficient and verbose -- needs refactoring
         client.on('playback:canplay', data => {
-            io.clients((error, clients) => {
+       //     io.clients((error, clients) => {
                 
                 var totalClients = clients.length;
                 
@@ -95,7 +95,7 @@ module.exports = function(io) {
         
         client.on('queue:update', newQueue => {
             Player.updateQueue(newQueue);
-            io.emit('queue:update', Player.queue);
+          //  io.emit('queue:update', Player.queue);
         });
         
         client.on('queue:set', source => {
