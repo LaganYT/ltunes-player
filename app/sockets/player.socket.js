@@ -1,10 +1,11 @@
-//module.exports = function(io) {
+module.exports = function(io) {
     var Player = {
         queue: {
             source: {
                 id: null,
                 type: null,
                 tracks: [],
+                /* other spotify data */
             },
             nowPlaying: {
                 index: 0,
@@ -54,13 +55,14 @@
         
         seek(to) {
             
-        },  
+        },
         
+        // canPlay
     };
     
-    /*io.on('connection', client => {
-    
-         var clientsThatCanPlay = 1, canPlayTimeout;
+    io.on('connection', client => {
+        
+        var clientsThatCanPlay = 0, canPlayTimeout;
         
 		client.on('connection:ping', () => client.emit('connection:pong'));
         
@@ -70,13 +72,13 @@
                 
                 var totalClients = clients.length;
                 
-                                if (clientsThatCanPlay == 0) {
+                if (clientsThatCanPlay == 0) {
                     canPlayTimeout = setTimeout(function() {
                         // TODO: Boot slow loading devices
                         console.log((totalClients - clientsThatCanPlay) + ' are taking too long, playing now');
                         client.emit('playback:play');
                     }, 3000);
-				},
+                }
                 
                 clientsThatCanPlay++;
             
@@ -93,7 +95,7 @@
         
         client.on('queue:update', newQueue => {
             Player.updateQueue(newQueue);
-           // io.emit('queue:update', Player.queue);
+            io.emit('queue:update', Player.queue);
         });
         
         client.on('queue:set', source => {
@@ -107,7 +109,6 @@
         
         client.on('track:play.index', data => client.broadcast.emit('track:play.index', data));
         
-        client.on('track:ended', () => client.broadcast.emit('track:ended'));*/
-    //}); 
-//}; 
-
+        client.on('track:ended', () => client.broadcast.emit('track:ended'));
+    });
+};
