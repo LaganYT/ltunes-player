@@ -29,7 +29,7 @@ app.use(expressGeoIP('US').getCountryCodeMiddleware);
 app.use('/api', require('./app/routes'));
 app.use('/', express.static('public'));
 
-//require('./app/sockets')(io);
+require('./app/sockets')(io);
 
 var port = process.env.PORT || 8080;
 server.listen(port, function () {
