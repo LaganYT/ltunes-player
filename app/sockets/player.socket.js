@@ -62,7 +62,7 @@ module.exports = function(io) {
     
     io.on('connection', client => {
         
-        var clientsThatCanPlay = 0, canPlayTimeout;
+        /*var clientsThatCanPlay = 0, canPlayTimeout;
         
 		client.on('connection:ping', () => client.emit('connection:pong'));
         
@@ -91,11 +91,11 @@ module.exports = function(io) {
                     client.emit('playback:play', data);
                 }
             });
-        });
+        });*/
         
         client.on('queue:update', newQueue => {
             Player.updateQueue(newQueue);
-            io.emit('queue:update', Player.queue);
+           /* io.emit('queue:update', Player.queue);*/
         });
         
         client.on('queue:set', source => {
@@ -107,8 +107,8 @@ module.exports = function(io) {
         client.on('playback:skip.next', () => Player.skip('next'));
         client.on('playback:skip.prev', () => Player.skip('prev'));
         
-        client.on('track:play.index', data => client.broadcast.emit('track:play.index', data));
+      //  client.on('track:play.index', data => client.broadcast.emit('track:play.index', data));
         
-        client.on('track:ended', () => client.broadcast.emit('track:ended'));
+       // client.on('track:ended', () => client.broadcast.emit('track:ended'));
     });
 };
