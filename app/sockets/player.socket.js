@@ -20,9 +20,9 @@ module.exports = function(io) {
            // io.emit('queue:set', source);
         },
         
-       /* updateQueue(newQueue)  {
+         updateQueue(newQueue)  {
             this.queue = Object.assign(this.queue, newQueue);
-        },*/
+        },
         
         plause() {
            // io.emit(this.queue.nowPlaying ? 'playback:play' : 'playback:pause');
